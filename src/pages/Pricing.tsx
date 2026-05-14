@@ -8,7 +8,7 @@ const packages = [
   {
     name: 'Essence',
     subtitle: 'Intimate Celebrations',
-    price: 'Starting from ₹1,25,000',
+    price: 'Available on Request',
     description: 'Perfect for small gatherings and elegant traditions.',
     deliverables: [
       '1 Day Coverage (up to 8 hours)',
@@ -23,7 +23,7 @@ const packages = [
   {
     name: 'Legacy',
     subtitle: 'The Complete Experience',
-    price: 'Starting from ₹2,50,000',
+    price: 'Available on Request',
     description: 'Our most loved package for a comprehensive cinematic story.',
     deliverables: [
       '2 Days Coverage',
@@ -39,7 +39,7 @@ const packages = [
   {
     name: 'Cinema',
     subtitle: 'Grand Cinematic Affair',
-    price: 'Starting from ₹4,00,000',
+    price: 'Available on Request',
     description: 'The ultimate coverage with 4K production and grand teams.',
     deliverables: [
       'Multiple Day Coverage',
@@ -62,8 +62,8 @@ const policies = [
   },
   {
     icon: Info,
-    title: 'Fixed Pricing',
-    desc: 'We maintain fixed pricing to ensure no compromise on equipment, team expertise, or post-processing quality.'
+    title: 'Bespoke Pricing',
+    desc: 'Every story is unique. We offer customized pricing tailored to the scale, location, and specific artistic requirements of your celebration.'
   },
   {
     icon: CreditCard,
