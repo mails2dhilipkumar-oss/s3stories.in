@@ -1,0 +1,179 @@
+.featured-stories {
+    background: var(--bg-primary);
+}
+
+:root {
+    --s: 280px;
+    /* size */
+    --g: 12px;
+    /* increased gap for magnetic effect */
+    --f: calc(1.732 * var(--s) + 4 * var(--g));
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
+    /* Synchronized common gap for all sides */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 100px;
+}
+
+/* Remove the float logic since we are using Grid now */
+.stories-grid::before {
+    display: none;
+}
+
+.story-card {
+    width: 100%;
+    /* Fill the grid span */
+    aspect-ratio: 1 / 1.1547;
+    grid-column: span 2;
+    clip-path: url(#rounded-hex);
+    background: var(--white);
+    position: relative;
+    transition: all 0.5s var(--ease-smooth);
+    /* Pulled up to match the 20px horizontal gap visually */
+    margin-top: -75px;
+}
+
+/* Ensure the first row (4 tiles) doesn't have a top margin */
+.story-card:nth-child(1),
+.story-card:nth-child(2),
+.story-card:nth-child(3),
+.story-card:nth-child(4) {
+    margin-top: 0;
+}
+
+/* 4-3 Staggered Grid Placement */
+.story-card:nth-child(7n+1) {
+    grid-column: 1 / span 2;
+}
+
+.story-card:nth-child(7n+2) {
+    grid-column: 3 / span 2;
+}
+
+.story-card:nth-child(7n+3) {
+    grid-column: 5 / span 2;
+}
+
+.story-card:nth-child(7n+4) {
+    grid-column: 7 / span 2;
+}
+
+.story-card:nth-child(7n+5) {
+    grid-column: 2 / span 2;
+}
+
+.story-card:nth-child(7n+6) {
+    grid-column: 4 / span 2;
+}
+
+.story-card:nth-child(7n+7) {
+    grid-column: 6 / span 2;
+}
+
+.story-card__image-wrap {
+    position: absolute;
+    /* The inset creates the 4px magnetic border between interlocking tiles */
+    inset: 4px;
+    clip-path: url(#rounded-hex);
+    overflow: hidden;
+    background: #111;
+}
+
+.story-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s var(--ease-smooth);
+}
+
+.story-card:hover {
+    z-index: 100;
+    transform: scale(1.08) !important;
+}
+
+.story-card:hover .story-card__image {
+    transform: scale(1.1);
+}
+
+.story-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: all 0.4s var(--ease-smooth);
+    text-align: center;
+}
+
+.story-card:hover .story-card__overlay {
+    opacity: 1;
+}
+
+.story-card__view {
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 4px;
+}
+
+.story-card__couple {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.story-card__meta {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* Responsive Scaling */
+
+@media (max-width: 1200px) {
+    :root {
+        --s: 240px;
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --s: 200px;
+        --g: 10px;
+    }
+
+    .stories-grid {
+        padding: 60px 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --s: 160px;
+        --g: 6px;
+    }
+}
+
+@media (max-width: 400px) {
+    :root {
+        --s: 140px;
+    }
+}

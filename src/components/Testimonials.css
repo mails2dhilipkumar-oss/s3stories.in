@@ -1,0 +1,113 @@
+.testimonials {
+  background: var(--bg-primary);
+}
+
+.testimonials__carousel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonials__arrow {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.testimonials__arrow:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.testimonials__content {
+  flex: 1;
+  text-align: center;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.testimonials__quote-icon {
+  color: var(--gold-dim);
+  opacity: 0.4;
+  margin-bottom: var(--space-lg);
+}
+
+.testimonials__slide {
+  text-align: center;
+}
+
+.testimonials__text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.8;
+  margin-bottom: var(--space-xl);
+}
+
+.testimonials__author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.testimonials__name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--gold);
+}
+
+.testimonials__event {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.testimonials__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-2xl);
+}
+
+.testimonials__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.testimonials__dot--active {
+  background: var(--gold);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonials__arrow {
+    display: none;
+  }
+
+  .testimonials__content {
+    min-height: 200px;
+  }
+}
